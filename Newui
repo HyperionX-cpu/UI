@@ -123,10 +123,10 @@ local SaveManager = {} do
 			end
 		end
 
-		-- Force MainColor to blue after every load
+		-- Force AccentColor to dark blue after every load
 		task.defer(function()
-			if Options.MainColor then
-				Options.MainColor:SetValueRGB(Color3.fromHex("#0000FF"))
+			if Options.AccentColor then
+				Options.AccentColor:SetValueRGB(Color3.fromHex("#1E3A8A"))
 			end
 		end)
 
@@ -255,10 +255,10 @@ local SaveManager = {} do
 
 	SaveManager:BuildFolderTree()
 
-	-- Force MainColor to blue on startup (in case UI is already built)
+	-- Force AccentColor to dark blue on startup
 	task.spawn(function()
-		repeat task.wait() until Options.MainColor
-		Options.MainColor:SetValueRGB(Color3.fromHex("#0000FF"))
+		repeat task.wait() until Options.AccentColor
+		Options.AccentColor:SetValueRGB(Color3.fromHex("#1E3A8A"))
 	end)
 end
 
